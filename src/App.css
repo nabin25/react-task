@@ -1,38 +1,244 @@
-.App {
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-popup {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.edit-popup h2 {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.edit-popup label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.edit-popup input,
+.edit-popup textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.edit-popup button {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-popup button:hover {
+  background: #2980b9;
+}
+
+.close-icon {
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .edit-popup {
+    max-width: 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.post-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #9bccd4 ;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: max-height 0.3s ease-out; 
+  overflow: hidden;
+  max-height: 1000px;
+}
+
+.post-actions {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.delete-icon {
+  margin-right: 4px;
+}
+
+
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post-list {
+  flex: 1; 
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.post-form {
+  background-color: #ecd1d1;
+  flex: 1; 
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height:35vh;
+  padding: 16px;
+}  
+
+.post-form label {
+  display:block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.post-form input, .post-form textarea {
+  width:300px;
+  padding: 8px;
+  margin-bottom: 16px;
+  border-radius: 5px;
+}
+
+.post-form button {
+  background-color: #4caf50;
   color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.post-form button:hover {
+  background-color: #45a049;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 800px) {
+  .post-list {
+    flex: 0 0 75%; 
   }
-  to {
-    transform: rotate(360deg);
+
+  .post-form {
+    flex: 0 0 25%; 
+    height:45vh;
+    margin-top: 50px;
   }
+
+  .post-form input, .post-form textarea{
+    width: 80%;
+  }
+}
+
+.search-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: flex-end; 
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 16px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #45a049;
+}
+
+nav {
+  background-color: #333;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  margin-right: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ffcc00;
+}
+
+.filter-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+select{
+  border-radius: 10px;
+  height:30px;
+}
+
+.completed{
+  background-color:rgba(0, 100, 0, 0.5);
+}
+
+.incomplete{
+  background-color: rgba(100, 0, 0, 0.4);
+}
+
+.post-actions button{
+  border:none;
+  border-radius: 5px;
+  background-color: rgb(232, 217, 155);
 }
